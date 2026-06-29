@@ -1,0 +1,48 @@
+<idea-plugin>
+    <id>com.mamadra.rubberduck</id>
+    <name>Rubber Duck Buddy</name>
+    <vendor email="mamadra56789@gmail.com" url="https://github.com/mamadra">mamadra</vendor>
+
+    <description><![CDATA[
+        A rubber duck floats in the corner of your editor and reacts with its "face" to the
+        state of your project — it breathes while you work, panics on a failed build, cheers up
+        on a clean one, and quietly <b>nods</b> when you tell it what's wrong.
+        <br/><br/>
+        This is rubber-duck debugging, made literal: explaining the problem out loud is what
+        helps. The duck never reads, analyses, or answers what you type — that's the whole point.
+        Zero usefulness, maximum delight.
+        <br/><br/>
+        <b>How to use</b>
+        <ul>
+            <li>Open a file — the duck appears in the editor corner and breathes.</li>
+            <li>Build with errors → it panics; a clean build → it's happy.</li>
+            <li>Press <b>Ctrl+Alt+D</b> (or click the duck) → tell it what's wrong; it nods.</li>
+        </ul>
+        It never sends anything anywhere, and it has no settings to fiddle with.
+    ]]></description>
+
+    <change-notes><![CDATA[
+        <b>0.0.1</b>
+        <ul>
+            <li>First release: editor-corner duck that reacts to build status and live problems.</li>
+            <li>"Tell the Duck" ritual popup (Ctrl+Alt+D) — the duck nods, then quacks.</li>
+        </ul>
+    ]]></change-notes>
+
+    <depends>com.intellij.modules.platform</depends>
+    <depends>com.intellij.modules.lang</depends>
+    <depends>com.intellij.java</depends>
+
+    <extensions defaultExtensionNs="com.intellij">
+        <postStartupActivity implementation="com.github.rubberduck.startup.DuckStartupActivity"/>
+    </extensions>
+
+    <actions>
+        <action id="RubberDuck.TellTheDuck"
+                class="com.github.rubberduck.action.TellTheDuckAction"
+                text="Tell the Duck..."
+                description="Open the duck and tell it what's wrong. It just nods.">
+            <keyboard-shortcut keymap="$default" first-keystroke="control alt D"/>
+        </action>
+    </actions>
+</idea-plugin>
