@@ -21,14 +21,6 @@ The duck glued to the editor corner, panicking after a broken build:
 
 ![Duck in the editor](marketing/preview-editor.png)
 
-The "Tell the Duck" ritual popup (Ctrl+Alt+D) — it nods, then quacks, and ignores what you typed:
-
-![Tell the Duck](marketing/preview-tell-the-duck.png)
-
-Plugin avatar:
-
-<img src="marketing/pluginIcon-512.png" width="128" alt="Rubber Duck Buddy icon"/>
-
 ## Stack
 
 - Kotlin, JDK 21
